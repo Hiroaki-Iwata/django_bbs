@@ -5,6 +5,7 @@ from django.contrib.sitemaps.views import sitemap
 
 from thread.sitemaps import TopicSitemap, CategorySitemap
 from base.sitemaps import BaseSitemap
+from django.conf.urls.static import static
 
 sitemaps = {
     'topic': TopicSitemap,
@@ -20,7 +21,7 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('search/', include('search.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     import debug_toolbar
