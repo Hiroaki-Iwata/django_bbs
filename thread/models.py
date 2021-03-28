@@ -6,7 +6,15 @@ from django.core.validators import FileExtensionValidator
 
 class CommentManager(models.Manager):
     # Comment操作に関する処理を追加
-    pass
+    def create_comment(self, user_name, message, topic_id, image=None):
+        comment = self.model(
+            user_name=user_name,
+            message=message,
+            image=image
+        )
+        comment.topic = Topic.objects.get(id=topic_id)
+        comment.no = self.filter(topic_id=topic_id).count() + 1
+        comment.save()
 
 class CategoryManager(models.Manager):
     # Category操作に関する処理を追加
