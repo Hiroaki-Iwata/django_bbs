@@ -2,7 +2,6 @@ from django.forms import ModelForm
 from django.contrib.auth.models import User
 
 class UserChangeForm(ModelForm):
-    print("aaaaaa")
     class Meta:
         model = User
         fields = (
@@ -10,10 +9,6 @@ class UserChangeForm(ModelForm):
             'last_name',
             'first_name',
         )
-        labels = {
-            'email':'メールアドレス','last_name':'名前','first_name':'苗字'
-        }
-
 
     def __init__(self, email=None, first_name=None, last_name=None, *args, **kwargs):
         kwargs.setdefault('label_suffix', '')
