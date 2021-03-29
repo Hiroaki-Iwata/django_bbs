@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'thread',
     'api',
     'search',
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
