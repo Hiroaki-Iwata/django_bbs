@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
-
+from accounts.models import User
 
 
 
@@ -54,6 +54,17 @@ class Category(models.Model):
         return self.name
 
 class Topic(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+    )
+    email = models.EmailField(
+        verbose_name='メールアドレス',
+        null=True,
+        blank=True,
+    )
     user_name = models.CharField(
         'お名前',
         max_length=30,
@@ -95,6 +106,17 @@ class Comment(models.Model):
     )
     no = models.IntegerField(
         default=0,
+    )
+    user = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+    )
+    email = models.EmailField(
+        verbose_name='メールアドレス',
+        null=True,
+        blank=True,
     )
     user_name = models.CharField(
         'お名前',

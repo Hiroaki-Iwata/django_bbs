@@ -14,7 +14,7 @@ sitemaps = {
 }
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('', include('base.urls')),
     path('thread/', include('thread.urls')),
@@ -28,3 +28,4 @@ if settings.DEBUG:
     urlpatterns = [
         path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
+    

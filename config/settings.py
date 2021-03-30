@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from accounts.apps import AccountsConfig
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,11 +32,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'base',
-    'thread',
-    'api',
-    'search',
-    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'debug_toolbar',
+    'base',
+    'thread',
+    'api',
+    'search',
+    'accounts',
 ]
 
 SITE_ID = 1
@@ -93,8 +94,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'forum_data', #作成したデータベース名
+        'USER': 'user', # ログインユーザー名
+        'HOST': 'localhost',
+        'PASSWORD': 'INOtahi1210',
     }
 }
 
@@ -147,3 +151,5 @@ MEDIA_URL = '/media/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 LOGIN_REDIRECT_URL = '/'
+
+AUTH_USER_MODEL = 'accounts.User'
