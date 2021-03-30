@@ -11,7 +11,7 @@ from django.contrib.auth.views import (
 )
 from .models import User
 from .forms import (
-    UserInfoChangeForm,
+    UserInfoChangeForm,EmailAuthenticationForm,
     CustomAuthenticationForm, CustomPasswordChangeForm,
     CustomPasswordResetForm, CustomSetPasswordForm,
     CustomUserChangeForm, CustomUserCreationForm, EmailChangeForm
@@ -90,7 +90,8 @@ class UserChangeView(LoginRequiredMixin, FormView):
         return kwargs
 
 class CustomLoginView(LoginView):
-    form_class = CustomAuthenticationForm
+    # form_class = CustomAuthenticationForm
+    form_class = EmailAuthenticationForm
 
 class CustomLogoutView(LogoutView):
     template_name = 'registration/logged_out.html'
