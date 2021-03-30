@@ -5,7 +5,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib.auth import login, authenticate
-from .forms import UserChangeForm
+from django.contrib.auth.views import LoginView
+from .forms import UserChangeForm, CustomAuthenticationForm
 
 class UserCreateView(FormView):
     form_class = UserCreationForm
@@ -55,3 +56,6 @@ class UserChangeView(LoginRequiredMixin, FormView):
             'last_name' : self.request.user.last_name,
         })
         return kwargs
+
+class CustomLoginView(LoginView):
+    form_class = CustomAuthenticationForm
