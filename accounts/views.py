@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from .forms import UserChangeForm, CustomAuthenticationForm
 
 class UserCreateView(FormView):
@@ -59,3 +59,7 @@ class UserChangeView(LoginRequiredMixin, FormView):
 
 class CustomLoginView(LoginView):
     form_class = CustomAuthenticationForm
+
+class CustomLogoutView(LogoutView):
+    template_name = 'registration/logged_out.html'
+    next_page = '/'
