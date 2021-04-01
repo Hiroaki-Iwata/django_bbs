@@ -5,7 +5,7 @@ from thread.models import Topic
 
 def top(request):
     # template = loader.get_template('base/top.html')
-    ctx = {'title': 'IT学習ちゃんねる(仮)'}
+    ctx = {'title': '参考書Q'}
     # return HttpResponse(template.render(ctx, request))
     return render(request, 'base/top.html', ctx)
 
@@ -14,7 +14,7 @@ class TopView(TemplateView):
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
-        ctx['title'] = 'IT学習ちゃんねる(仮)'
+        ctx['title'] = '参考書Q'
         return ctx
 
 class TopicListView(ListView):
