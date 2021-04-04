@@ -24,7 +24,10 @@ SECRET_KEY = 'af_nqd8c=p$xr2)imj=a_$-y#(wa$58takphts*tphi=&a=#dg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0',]
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    'localhost',
+    ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -88,8 +91,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'forum_data', #作成したデータベース名
         'USER': 'user', # ログインユーザー名
-        'HOST': 'db', #dockerの場合
-        #'HOST': '127.0.0.1', #ローカルの場合
+        #'HOST': 'db', #dockerの場合
+        'HOST': '127.0.0.1', #ローカルの場合
         'PASSWORD': 'INOtahi1210',
         'PORT': 3306,
     }
