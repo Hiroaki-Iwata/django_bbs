@@ -24,7 +24,7 @@ SECRET_KEY = 'af_nqd8c=p$xr2)imj=a_$-y#(wa$58takphts*tphi=&a=#dg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0',]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -91,6 +91,7 @@ DATABASES = {
         'HOST': 'db', #dockerの場合
         #'HOST': '127.0.0.1', #ローカルの場合
         'PASSWORD': 'INOtahi1210',
+        'PORT': 3306,
     }
 }
 

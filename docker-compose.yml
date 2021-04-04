@@ -6,7 +6,7 @@ services:
     command: python3 manage.py runserver 0.0.0.0:8000
     working_dir: /code
     ports:
-      - 18000:8000
+      - 8000:8000
     volumes:
       - .:/code
     depends_on:
@@ -23,6 +23,6 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
     ports:
-      - 33306:3306
+      - 3306:3306
 
 
