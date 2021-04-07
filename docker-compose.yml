@@ -1,18 +1,19 @@
 version: '3'
 services:
-  web:
-    container_name: django-docker
-    build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
-    working_dir: /code
+  nginx:
+    image: nginx:1.13
     ports:
-      - 8000:8000
+      - "8000:8000"
     volumes:
-      - .:/code
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+      - ./static:/static
     depends_on:
-      - db
+      - python
+
   db:
-    container_name: django-docker-db
+    container_name: django-bbs-db
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     image: mysql:5.7
     restart: always
     environment:
@@ -20,9 +21,19 @@ services:
       MYSQL_USER: 'user'
       MYSQL_PASSWORD: 'INOtahi1210'
       MYSQL_ALLOW_EMPTY_PASSWORD: ‘yes’
+      TZ: 'Asia/Tokyo'
     volumes:
       - ./mysql:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
     ports:
-      - 3306:3306
+      - "3306:3306"
 
-
+  python:
+    build: ./
+    command: uwsgi --socket :8001 --module config.wsgi --py-autoreload 1 --logto /tmp/mylog.log
+    volumes:
+      - .:/code
+    expose:
+      - "8001"
+    depends_on:
+      - db

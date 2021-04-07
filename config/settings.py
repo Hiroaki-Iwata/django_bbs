@@ -50,6 +50,8 @@ SITE_ID = 1
 
 INTERNAL_IPS = [
     '127.0.0.1',
+    'localhost',
+    '0.0.0.0',
 ]
 
 MIDDLEWARE = [
@@ -91,8 +93,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'forum_data', #作成したデータベース名
         'USER': 'user', # ログインユーザー名
-        #'HOST': 'db', #dockerの場合
-        'HOST': '127.0.0.1', #ローカルの場合
+        'HOST': 'db', #dockerの場合
+        #'HOST': '127.0.0.1', #ローカルの場合
         'PASSWORD': 'INOtahi1210',
         'PORT': 3306,
     }
@@ -125,9 +127,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
