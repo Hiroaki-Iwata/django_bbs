@@ -4,4 +4,4 @@ static/css/components/* linguist-documentation
 static/js/semantic.js linguist-documentation
 nginx/* linguist-documentation
 sql/* linguist-documentation
-mysql/* linguist-documentation
+mysql/* linguist-vendored
