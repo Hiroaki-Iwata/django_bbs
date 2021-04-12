@@ -19,6 +19,8 @@ class TopicModelForm(forms.ModelForm):
             # 'user_name',
             # 'email',
             'category',
+            'reference_book_name',
+            'reference_book_page',
             'message',
         ]
         widgets = {
@@ -48,6 +50,8 @@ class LoggedInUserTopicModelForm(forms.ModelForm):
         fields=[
             'title',
             'category',
+            'reference_book_name',
+            'reference_book_page',
             'message',
         ]
         widgets = {

@@ -97,6 +97,9 @@ DATABASES = {
         #'HOST': '127.0.0.1', #ローカルの場合
         'PASSWORD': 'INOtahi1210',
         'PORT': 3306,
+        'OPTIONS': {
+            'charset': 'utf8mb4'
+        }
     }
 }
 
@@ -126,6 +129,9 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#collectstaticで静的ファイルを集める場所
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 

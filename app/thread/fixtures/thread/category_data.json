@@ -4,8 +4,8 @@
         "model" : "thread.category",
         "pk" : 1,
         "fields" : {
-            "name" : "WEB技術",
-            "url_code" : "web_app",
+            "name" : "現代文",
+            "url_code" : "modern_writing",
             "sort" : 1
         }
     },
@@ -13,8 +13,8 @@
         "model" : "thread.category",
         "pk" : 2,
         "fields" : {
-            "name" : "モバイル",
-            "url_code" : "mobile",
+            "name" : "古文/漢文",
+            "url_code" : "ancient_writing",
             "sort" : 2
         }
     },
@@ -22,8 +22,8 @@
         "model" : "thread.category",
         "pk" : 3,
         "fields" : {
-            "name" : "プログラミング",
-            "url_code" : "programing",
+            "name" : "数学I/A",
+            "url_code" : "math_1",
             "sort" : 3
         }
     },
@@ -31,8 +31,8 @@
         "model" : "thread.category",
         "pk" : 4,
         "fields" : {
-            "name" : "OS関連・インフラ",
-            "url_code" : "os",
+            "name" : "数学II/B",
+            "url_code" : "math_2",
             "sort" : 4
         }
     },
@@ -40,9 +40,108 @@
         "model" : "thread.category",
         "pk" : 5,
         "fields" : {
-            "name" : "業界ネタ・憩いの場",
-            "url_code" : "chatter",
+            "name" : "数学III/C",
+            "url_code" : "math_3",
             "sort" : 5
+        }
+    },
+    {
+        "model" : "thread.category",
+        "pk" : 6,
+        "fields" : {
+            "name" : "英語",
+            "url_code" : "english",
+            "sort" : 6
+        }
+    },
+    {
+        "model" : "thread.category",
+        "pk" : 7,
+        "fields" : {
+            "name" : "世界史",
+            "url_code" : "world_history",
+            "sort" : 7
+        }
+    },
+    {
+        "model" : "thread.category",
+        "pk" : 8,
+        "fields" : {
+            "name" : "日本史",
+            "url_code" : "japan_history",
+            "sort" : 8
+        }
+    },
+    {
+        "model" : "thread.category",
+        "pk" : 9,
+        "fields" : {
+            "name" : "地理",
+            "url_code" : "geography",
+            "sort" : 9
+        }
+    },
+    {
+        "model" : "thread.category",
+        "pk" : 10,
+        "fields" : {
+            "name" : "政治/経済",
+            "url_code" : "politics_and_economy",
+            "sort" : 10
+        }
+    },
+    {
+        "model" : "thread.category",
+        "pk" : 11,
+        "fields" : {
+            "name" : "倫理",
+            "url_code" : "ethics",
+            "sort" : 11
+        }
+    },
+    {
+        "model" : "thread.category",
+        "pk" : 12,
+        "fields" : {
+            "name" : "生物基礎/生物",
+            "url_code" : "biology",
+            "sort" : 12
+        }
+    },
+    {
+        "model" : "thread.category",
+        "pk" : 13,
+        "fields" : {
+            "name" : "化学基礎/化学",
+            "url_code" : "chemistry",
+            "sort" : 13
+        }
+    },
+    {
+        "model" : "thread.category",
+        "pk" : 14,
+        "fields" : {
+            "name" : "地学基礎/地学",
+            "url_code" : "earth_science",
+            "sort" : 14
+        }
+    },
+    {
+        "model" : "thread.category",
+        "pk" : 15,
+        "fields" : {
+            "name" : "物理基礎/物理",
+            "url_code" : "physics",
+            "sort" : 15
+        }
+    },
+    {
+        "model" : "thread.category",
+        "pk" : 16,
+        "fields" : {
+            "name" : "その他",
+            "url_code" : "etc",
+            "sort" : 16
         }
     }
 ]

@@ -89,6 +89,17 @@ class Topic(models.Model):
         null=True,
         blank=False,
     )
+    reference_book_name = models.CharField(
+        '参考書名',
+        max_length=30,
+        null=True,
+        blank=False,
+    )
+    reference_book_page = models.IntegerField(
+        verbose_name='ページ',
+        blank=True,
+        null=True,
+    )
     created = models.DateTimeField(
         auto_now_add=True,
     )
