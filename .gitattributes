@@ -2,7 +2,8 @@ static/css/semantic.css linguist-documentation
 static/css/themes/* linguist-documentation
 static/css/components/* linguist-documentation
 static/js/semantic.js linguist-documentation
-static/admin/* linguist-documentation
+static/admin/** linguist-documentation
+static/debug_toolbar/* linguist-documentation
 nginx/* linguist-documentation
 sql/* linguist-documentation
 mysql/** linguist-vendored
