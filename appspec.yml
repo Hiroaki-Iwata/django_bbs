@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /django_bbs/
+    destination: django_bbs/
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
