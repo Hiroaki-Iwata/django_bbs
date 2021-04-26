@@ -60,21 +60,21 @@ class TopicCreateView(CreateView):
         elif self.request.POST.get('next', '') == 'create':
             form.save(self.request.user)
             # メール送信処理
-            template = get_template('thread/mail/topic_mail.html')
-            user_name = self.request.user.username if self.request.user else form.cleaned_data['user_name']
-            mail_ctx={
-                'title': form.cleaned_data['title'],
-                'user_name': user_name,
-                'message': form.cleaned_data['message'],
-            }
-            EmailMessage(
-                subject='トピック作成: ' + form.cleaned_data['title'],
-                body=template.render(mail_ctx),
-                from_email='hogehoge@example.com',
-                to=['admin@example.com'],
-                cc=['admin2@example.com'],
-                bcc=['admin3@example.com'],
-            ).send()
+            # template = get_template('thread/mail/topic_mail.html')
+            # user_name = self.request.user.username if self.request.user else form.cleaned_data['user_name']
+            # mail_ctx={
+            #     'title': form.cleaned_data['title'],
+            #     'user_name': user_name,
+            #     'message': form.cleaned_data['message'],
+            # }
+            # EmailMessage(
+            #     subject='トピック作成: ' + form.cleaned_data['title'],
+            #     body=template.render(mail_ctx),
+            #     from_email='hogehoge@example.com',
+            #     to=['admin@example.com'],
+            #     cc=['admin2@example.com'],
+            #     bcc=['admin3@example.com'],
+            # ).send()
             # return super().form_valid(form)
             return redirect(self.success_url)
         else:

@@ -27,7 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '0.0.0.0',
     'localhost',
-    '52.192.214.247',
+    '52.192.72.170',
     ]
 
 INSTALLED_APPS = [
@@ -79,6 +79,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
             'libraries':{
                 'utility': 'thread.templatetags.threadtags',

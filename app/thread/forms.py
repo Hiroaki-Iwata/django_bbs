@@ -22,6 +22,7 @@ class TopicModelForm(forms.ModelForm):
             'reference_book_name',
             'reference_book_page',
             'message',
+            'image',
         ]
         widgets = {
             'title' : forms.TextInput(attrs={'class': 'hoge'}),
@@ -53,6 +54,7 @@ class LoggedInUserTopicModelForm(forms.ModelForm):
             'reference_book_name',
             'reference_book_page',
             'message',
+            'image',
         ]
         widgets = {
             'title' : forms.TextInput(attrs={'class': 'hoge'}),
