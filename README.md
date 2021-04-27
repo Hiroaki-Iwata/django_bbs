@@ -9,7 +9,7 @@
 
 開発言語: Python/JavaScript/HTML/CSS/SQL
 
-使用技術: Djangoフレームワーク/uwsgi/nginx/MySQL
+使用技術: Djangoフレームワーク/uwsgi/nginx/MySQL<br>
         Docker/AWS(EC2,VPC,Route53,IAM,API Gateway,CodeDeploy,CodePipeline)
 
 URL: http://52.192.72.170:8000/
